@@ -13,9 +13,9 @@
         <title></title>
     </head>
     <body>
-        <form action="pagina_busqueda.php">
-            <label>Buscar: <input type="text" name="buscar"></label>
-            <input type="submit" value="dale!">
+        <form action='pagina_busqueda.php'>
+            <label>Buscar: <input type='text' name='buscar'></label>
+            <input type='submit' value='dale!'>
         </form>
     </body>
 </html>
