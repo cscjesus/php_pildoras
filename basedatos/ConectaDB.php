@@ -37,8 +37,8 @@
         mysqli_select_db($conexion, $db) or die("No se encuentra la BD");
         mysqli_set_charset($conexion, "utf8"); //ver acentos
 //$query = "select * from datospersonales";
-        //$query = "select * from productos";
-        $query = "select * from productos where paisdeorigen='españa'";
+        $query = "select * from productos";
+        //$query = "select * from productos where paisdeorigen='españa'";
 
         $result = mysqli_query($conexion, $query);
         echo "<table>";
