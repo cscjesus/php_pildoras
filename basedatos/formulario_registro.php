@@ -31,7 +31,7 @@ body{
 
 <body>
 <h1>Registro de Artículos</h1>
-<form name="form1" method="get" action="insertar_registros.php">
+<form name="form1" method="get" action="insertar_registro.php">
   <table border="0" align="center">
     <tr>
       <td>Código Artículo</td>
