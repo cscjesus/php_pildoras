@@ -30,8 +30,8 @@ body{
 </head>
 
 <body>
-<h1>Agregar de Artículos</h1>
-<form name="form1" method="get" action="insertar_registro.php">
+<h1>Eliminación de Artículos</h1>
+<form name="form1" method="get" action="eliminar_registro.php">
   <table border="0" align="center">
     <tr>
       <td>Código Artículo</td>
@@ -73,7 +73,7 @@ body{
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td align="center"><input type="submit" name="agregar" id="enviar" value="Enviar"></td>
+      <td align="center"><input type="submit" name="eliminar" id="eliminar" value="Eliminar"></td>
       <td align="center"><input type="reset" name="Borrar" id="Borrar" value="Borrar"></td>
     </tr>
   </table>
