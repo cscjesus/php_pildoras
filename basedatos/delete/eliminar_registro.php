@@ -9,7 +9,7 @@
 $cod =$_GET['c_art'];
 
 
-include './datos.php';
+include '../datos.php';
 $conexion = mysqli_connect($host, $user, $pass);
 if (mysqli_connect_errno()) {
     echo"Fallo al conectar con la BD";

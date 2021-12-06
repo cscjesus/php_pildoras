@@ -7,7 +7,7 @@
  * @author liz
  */
 
-        include './datos.php';
+        include '../datos.php';
 //require './datos.php';
 //$conexion = mysqli_connect($host, $user, $pass, $db);
         $buscar =$_GET['buscar'];

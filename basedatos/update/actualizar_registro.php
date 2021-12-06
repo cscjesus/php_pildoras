@@ -14,7 +14,7 @@ $fec =$_GET['fecha'];
 $imp =$_GET['importado'];
 $por =$_GET['p_orig'];
 
-include './datos.php';
+include '../datos.php';
 $conexion = mysqli_connect($host, $user, $pass);
 if (mysqli_connect_errno()) {
     echo"Fallo al conectar con la BD";
@@ -29,7 +29,7 @@ $result = mysqli_query($conexion, $query);
 if (!$result) {
     echo'Error al insertar';
 } else {
-    echo"Registro guardado<br><br>";
+    echo"Registro actualizado<br><br>";
     echo "<table><tr><td> $cod<td>";
     echo "<td> $sec<td>";
     echo "<td> $nom<td>";

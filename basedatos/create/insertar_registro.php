@@ -14,7 +14,7 @@ $fec =$_GET['fecha'];
 $imp =$_GET['importado'];
 $por =$_GET['p_orig'];
 
-include './datos.php';
+include '../datos.php';
 $conexion = mysqli_connect($host, $user, $pass);
 if (mysqli_connect_errno()) {
     echo"Fallo al conectar con la BD";
