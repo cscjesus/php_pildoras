@@ -8,7 +8,7 @@
             table,td,tr{
                 width: 50%;
                 border:1px dotted #ff0000;
-                
+
                 margin:auto;
             }
         </style>
@@ -41,18 +41,22 @@
         //$query = "select * from productos where paisdeorigen='españa'";
 
         $result = mysqli_query($conexion, $query);
+        echo "Rows: ".mysqli_num_rows($result)."<br>";
+        echo "Fields: " . mysqli_num_fields($result)."<br>";
         echo "<table>";
         //while ($fila = mysqli_fetch_row($result)) {
-        while ($fila = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
+        while ($fila = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             echo"<tr>";
-            echo "<td>". $fila['codigoarticulo']."</td><td>". $fila['nombrearticulo']."</td> ";
-            echo "<td>". $fila['seccion']."</td><td>". $fila['importado']."</td> ";
-            echo "<td>". $fila['precio']."</td><td>". $fila['paisdeorigen']."</td> ";
-                        
+            echo "<td>" . $fila['codigoarticulo'] . "</td><td>" . $fila['nombrearticulo'] . "</td> ";
+            echo "<td>" . $fila['seccion'] . "</td><td>" . $fila['importado'] . "</td> ";
+            echo "<td>" . $fila['precio'] . "</td><td>" . $fila['paisdeorigen'] . "</td> ";
+
             echo"</tr>";
             //echo "$fila[0] $fila[1] $fila[2] $fila[3] <br>";
         }
         echo '</table>';
+        //mysqli_num_rows() regresa el numero de registros en una sentencia select
+
         mysqli_close($conexion);
         ?>
     </body>

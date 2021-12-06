@@ -6,16 +6,24 @@
  * Author     : liz
  * @author liz
  */
-$cod =$_GET['c_art'];
-$sec =$_GET['seccion'];
-$nom =$_GET['n_art'];
-$pre =$_GET['precio'];
-$fec =$_GET['fecha'];
-$imp =$_GET['importado'];
-$por =$_GET['p_orig'];
+//$cod = mysqli_real_escape_string($_GET['c_art']);//para evitar inyeccion sql
+//$sec =$_GET['seccion'];
+//$nom =$_GET['n_art'];
+//$pre =$_GET['precio'];
+//$fec =$_GET['fecha'];
+//$imp =$_GET['importado'];
+//$por =$_GET['p_orig'];
 
 include '../datos.php';
 $conexion = mysqli_connect($host, $user, $pass);
+//de forma obligatoria despues de la conexion
+$cod = mysqli_real_escape_string($conexion,$_GET['c_art']);//para evitar inyeccion sql
+$sec = mysqli_real_escape_string($conexion,$_GET['seccion']);
+$nom =mysqli_real_escape_string($conexion,$_GET['n_art']);
+$pre =mysqli_real_escape_string($conexion,$_GET['precio']);
+$fec =mysqli_real_escape_string($conexion,$_GET['fecha']);
+$imp =mysqli_real_escape_string($conexion,$_GET['importado']);
+$por =mysqli_real_escape_string($conexion,$_GET['p_orig']);
 if (mysqli_connect_errno()) {
     echo"Fallo al conectar con la BD";
 }

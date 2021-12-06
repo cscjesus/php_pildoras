@@ -46,14 +46,11 @@
 
             $result = mysqli_query($conexion, $query);
             if ($result) {
+                if (mysqli_num_rows($result) == 0) {
+                    echo 'no hay registro relacionado';
+                    exit();
+                }
                 $fila = mysqli_fetch_array($result, MYSQLI_ASSOC);
-//                $cod = $fila['codigoarticulo'];
-//                $nom = $fila['nombrearticulo'];
-//                $sec = $fila['seccion'];
-//                $imp = $fila['importado'];
-//                $pre = $fila['precio'];
-//                $fec = $fila['fecha'];
-                // $por = $fila['paisdeorigen'];
                 echo "<h1>Actualización de Artículos</h1>
 <form name='form1' method='get' action='actualizar_registro.php'>
   <table border='0' align='center'>
@@ -103,7 +100,7 @@
   </table>
 </form>";
             } else {
-                echo "registro no encontrado";
+                echo "Error al consultar";
             }
 
             mysqli_close($conexion);

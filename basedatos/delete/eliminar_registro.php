@@ -6,11 +6,12 @@
  * Author     : liz
  * @author liz
  */
-$cod =$_GET['c_art'];
+//$cod =$_GET['c_art'];
 
 
 include '../datos.php';
 $conexion = mysqli_connect($host, $user, $pass);
+$cod = mysqli_real_escape_string($conexion, $_GET['c_art']) ;
 if (mysqli_connect_errno()) {
     echo"Fallo al conectar con la BD";
 }
@@ -21,11 +22,12 @@ $query = "DELETE FROM productos WHERE codigoarticulo='$cod'";
 
 $result = mysqli_query($conexion, $query);
 if (!$result) {
-    echo'Error al insertar';
+    echo'Error al eliminar';
 } else {
     //echo"Registro Eliminado<br><br>";
     //echo mysqli_affected_rows($conexion);
     if(mysqli_affected_rows($conexion)==0){
+        //mysqli_num_rows() regresa el numero de registros en una sentencia select
         echo"no hay registros que eliminar";
     }else{
         echo"Se han eliminado ".mysqli_affected_rows($conexion). " registros";
