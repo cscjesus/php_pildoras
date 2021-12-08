@@ -29,6 +29,7 @@ if($conexion->errno){
     
 }*/
 echo"<table>";
+//while($fila=$resultados->fetch_array()){
 while($fila=$resultados->fetch_assoc()){
      echo"<tr>";
             echo "<td>". $fila['codigoarticulo']."</td><td>". $fila['nombrearticulo']."</td> ";
