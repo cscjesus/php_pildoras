@@ -18,6 +18,7 @@
             $seccion = htmlspecialchars($_GET['seccion']);
             $p_ori = htmlspecialchars($_GET['p_origen']);
             $base = new PDO("mysql:host=localhost;dbname=proyecto_jsp", "root", "");
+            //muestra la excepcion, de lo contrario no informa nada
             $base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $base->exec("set character set utf8");
             //$sql = "select nombrearticulo,seccion, precio,paisdeorigen from productos where nombrearticulo =?";
@@ -31,7 +32,9 @@
             }
             $pdo_statemente->closeCursor();
         } catch (Exception $e) {
-            die("Error: ".$e->getMessage());
+            //die("Error: ".$e->getMessage());
+            echo "Linea: " . $e->getLine() ." <br>";
+            echo "Codigo: " . $e->getCode();
         }finally{
             $base =null;
         }
