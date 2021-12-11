@@ -15,8 +15,9 @@
         <?php
         // put your code here
         require './DevuelveProductos.php';
+        $pais =$_GET['buscar'];
         $productos = new DevuelveProductos();
-        $array_productos = $productos->get_productos();
+        $array_productos = $productos->get_productos($pais);
         
         foreach($array_productos as $row)
         {

@@ -14,9 +14,17 @@ class DevuelveProductos extends Conexion{
         parent::__construct();
     }
     
-    public function get_productos(){
-        $resultado = $this->conexion_db->query('select * from productos');
+    public function get_productos($dato){
+        $sql ="select * from productos where paisdeorigen='$dato'";
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->execute(array($dato));
+        $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+        $sentencia->closeCursor();
+        $this->conexion_db=null;
+        return $resultado;
+        /*$resultado = $this->conexion_db->
+                query("select * from productos where paisdeorigen='$dato'");
         $productos = $resultado->fetch_all(MYSQLI_ASSOC);
-        return $productos;
+        return $productos;*/
     }
 }
